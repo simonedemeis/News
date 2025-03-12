@@ -16,7 +16,11 @@ namespace News.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             //Esplicitiamo la relazione tra le entità tramite Fluent API
+            //Partendo da Post
             modelBuilder.Entity<Post>().HasOne(b => b.Blog).WithMany(p => p.Posts);
+
+            //Partendo da Blog
+            modelBuilder.Entity<Blog>().HasMany(p => p.Posts).WithOne(b => b.Blog);
 
             //imposto il constraint DEFAULT sulla colonna PublishDate
             modelBuilder.Entity<Post>().Property(p => p.PublishDate).HasDefaultValueSql("GETDATE()");
