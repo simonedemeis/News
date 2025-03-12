@@ -12,6 +12,8 @@ namespace News.Data
 
         public DbSet<Post> Posts { get; set; }
 
+        public DbSet<User> Users { get; set; }
+
         //metodo per usare la Fluent API, gestire esplicitamente le relazioni e aggiungere constraint che non sarebbe possibile aggiunger con i Data Attributes
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

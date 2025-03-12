@@ -15,5 +15,8 @@ namespace News.Models
 
         //proprietà di navigazione: un blog può avere molti post
         public ICollection<Post> Posts { get; set; }
+
+        //proprietà di navigazione: un blog può avere molti utenti 
+        public ICollection<User> Users { get; set; }
     }
 }
